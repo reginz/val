@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Valentine's Day Invitation</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div
+        id="fir"
+        class="tenor-gif-embed"
+        data-postid="26869201"
+        data-share-method="host"
+        data-aspect-ratio="1.0356"
+        data-width="10%"
+      >
+        <a href="https://tenor.com/view/mochi-love-you-heart-gif-26869201"
+          >Mochi Love You Sticker</a
+        >from
+        <a href="https://tenor.com/search/mochi-stickers">Mochi Stickers</a>
+      </div>
+      <script
+        type="text/javascript"
+        async
+        src="https://tenor.com/embed.js"
+      ></script>
+      <script
+        type="text/javascript"
+        async
+        src="https://tenor.com/embed.js"
+      ></script>
+      <div
+        id="sec"
+        class="tenor-gif-embed sec"
+        data-postid="7853385873759700045"
+        data-share-method="host"
+        data-aspect-ratio="1.29688"
+        data-width="20%"
+      >
+        <a href="https://tenor.com/view/kiss-gif-7853385873759700045"
+          >Kiss GIF</a
+        >from <a href="https://tenor.com/search/kiss-gifs">Kiss GIFs</a>
+      </div>
+      <script
+        type="text/javascript"
+        async
+        src="https://tenor.com/embed.js"
+      ></script>
+      <h1 id="h1">Will You Be My Valentine?</h1>
+      <div>
+        <button id="yesButton">Yes</button>
+        <button id="noButton">No</button>
+      </div>
+      <h1 id="response"></h1>
+      <p id="res"></p>
+    </div>
+    <script>
+      document
+        .getElementById("yesButton")
+        .addEventListener("click", function () {
+          document.getElementById("response").textContent = "Yuppiii!";
+          document.getElementById("res").textContent =
+            "Check your calendar for the 17th :)";
+
+          document.getElementById("h1").style.display = "none";
+          document.getElementById("sec").style.display = "block";
+          document.getElementById("fir").style.display = "none";
+          document.getElementById("yesButton").style.display = "none";
+          document.getElementById("noButton").style.display = "none";
+        });
+
+      let noButtonInitial = { x: 0, y: 0 };
+      let noButtonMoved = false;
+
+      window.onload = function () {
+        const noButton = document.getElementById("noButton");
+        noButtonInitial.x =
+          noButton.getBoundingClientRect().left + window.scrollX;
+        noButtonInitial.y =
+          noButton.getBoundingClientRect().top + window.scrollY;
+      };
+
+      document
+        .getElementById("noButton")
+        .addEventListener("mouseover", function (event) {
+          if (!noButtonMoved) {
+            let x = Math.random() * (window.innerWidth - this.offsetWidth);
+            let y = Math.random() * (window.innerHeight - this.offsetHeight);
+            x = Math.max(0, x);
+            y = Math.max(0, y);
+            this.style.position = "absolute";
+            this.style.left = x + "px";
+            this.style.top = y + "px";
+            noButtonMoved = true;
+            setTimeout(() => {
+              noButtonMoved = false;
+            }, 100);
+          }
+        });
+    </script>
+  </body>
+</html>
